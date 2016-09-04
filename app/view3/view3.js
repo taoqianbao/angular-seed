@@ -16,12 +16,14 @@ angular.module('myApp.view3', ['ngRoute'])
     console.info('View3Ctrl');
 
     $scope.flag = true;
-    $scope.show = true;
+    $scope.show = false;
+    $scope.progress = 0;
 
     $scope.handle_github = function() {
 
         $scope.show = true;
         $scope.data = [];
+        $scope.progress = 0;
 
         githubService.getPullRequests()
             .then(function(result) {

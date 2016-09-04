@@ -15,6 +15,7 @@
 
 angular.module('myApp', [
         'ngRoute',
+        'myApp.index',
         'myApp.view1',
         'myApp.view2',
         'myApp.view3',
@@ -28,4 +29,9 @@ angular.module('myApp', [
         $routeProvider.otherwise({
             redirectTo: '/view1'
         });
+
+        // $locationProvider.html5Mode({
+        //     enable: true,
+        //     requireBase: false
+        // });
     }]);
