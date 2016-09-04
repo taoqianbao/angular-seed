@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../bower_components/angular/angular.js"></script>
+</head>
+<body>
+
+<div>
+    <h2>数据绑定指令</h2>
+    <ul ng-non-bindable>
+        <li>
+           <p>ng-bind</p>
+            <div>
+                There are <span ng-bind="todos.length"></span>items.
+            </div>
+        </li>
+        <li>ng-bind-html</li>
+        <li>
+            <p>ng-bind-template</p>
+            <div ng-bind-template="First: {{todos[0].action}}. Second: {{todos[1].action}}"></div>
+        </li>
+        <li>
+           <p>ng-non-bindable</p>
+            <div>
+                AngularJS uses {{and}} characters for templates.
+            </div>
+        </li>
+        <li>ng-model</li>
+    </ul>
+</div>
+
+<ul>
+    <li>ng-repreat</li>
+    <li>ng-repeat - first, last</li>
+    <li>ng-repeat-start, ng-repeat-end</li>
+    <li>ng-include</li>
+    <li>ng-switch</li>
+    <li>ng-cloak</li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+
+</body>
+</html>
