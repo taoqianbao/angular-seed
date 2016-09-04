@@ -1,0 +1,29 @@
+<p>This is the partial for view 3.</p>
+<p>
+    给你一个承诺 - 玩转 AngularJS 的 Promise
+</p>
+
+<!-- <div ng-controller="View3Ctrl"> -->
+<div>
+    <label for="flag">成功
+       <input id="flag" type="checkbox" ng-model="flag" /><br/>
+    </label>
+
+    <div ng-cloak>
+        {{status}}
+    </div>
+
+    <hr/>
+
+    <button ng-click="handle()">点击我</button>
+
+    <button ng-click="handle_github()">点击我获取GITHUB pull</button>
+
+    <div>
+        <h1>{{name}}</h1>
+        <h2>Progress: {{progress}}</h2>
+        <h3 ng-show="show">Please wait a moment...</h3>
+        <p ng-repeat="person in data">{{person.login}}</p>
+    </div>
+
+</div>
