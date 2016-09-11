@@ -23,7 +23,7 @@
                 <button type="button" class="btn btn-default btn-xs" ng-click="add(item.id)">＋</button>
 
             </td>
-            <td class="bold mark">{{item.price*item.quantity|number:2}}</td>
+            <td class="bold mark">{{item.price * item.quantity | number:2 }}</td>
             <td>
                 <button type="button" class="btn btn-default btn-xs" ng-click="delete(item.id)">删除</button>
             </td>
@@ -34,11 +34,11 @@
         已选商品：<span>{{getQuantites()}}
         </span>
         合计：
-        <span class=" mark" ng-show="getTotalAmount()<15000">{{getTotalAmount()|number:2}}</span>
+        <span class=" mark" ng-show="getTotalAmount()<15000">{{ getTotalAmount() | number:2 }}</span>
         <span class=" mark" ng-show="getTotalAmount()>=15000">
-            {{getTotalAmount()*discount|number:2}}
+            {{getTotalAmount() * discount | number:2 }}
             <span class="btn btn-xs">(9折)</span>
-            <span class="discount">({{getTotalAmount()|number:2}})</span>
+            <span class="discount">({{getTotalAmount() | number:2 }})</span>
         </span>
         <button type="button" class="btn btn-primary btn-sm" ng-click="alertSubmit()">结 算</button>
     </div>
