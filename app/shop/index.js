@@ -19,13 +19,13 @@ angular.module('myApp.cart', ['ngRoute'])
     $scope.items = [{
         id: 101,
         title: 'book one',
-        price: 40.84,
+        price: 10.84,
         quantity: 1,
         linkUrl: 'http://www.baidu.com'
     }, {
         id: 102,
         title: 'book 22222',
-        price: 40.84,
+        price: 30.84,
         quantity: 1,
         linkUrl: 'http://www.baidu.com'
     }, {
@@ -54,7 +54,7 @@ angular.module('myApp.cart', ['ngRoute'])
 
     //输入框添加keydown事件，避免输入非正整数
     $scope.quantityKeydown = function(event) {
-        event = event || window.event;      //兼容IE8以下，target也是
+        event = event || window.event; //兼容IE8以下，target也是
         var target = event.target || event.srcElement;
         var keycode = event.keyCode;
         if ((37 <= keycode && keycode <= 40) || (48 <= keycode && keycode <= 57) || (96 <= keycode && keycode <= 105) || keycode == 8) {
@@ -69,7 +69,7 @@ angular.module('myApp.cart', ['ngRoute'])
 
     //keyup事件，当输入数字为0时，重新刷新文本框内容
     $scope.quantityKeyup = function(event) {
-        event = event || window.event;  //兼容IE8以下，target也是
+        event = event || window.event; //兼容IE8以下，target也是
         var target = event.target || event.srcElement;
         var keycode = event.keyCode;
         if (48 === keycode || 96 === keycode) {
@@ -110,5 +110,27 @@ angular.module('myApp.cart', ['ngRoute'])
     $scope.alertSubmit = function() {
         alert('angular submit ok')
     };
+
+
+    //add sort function
+    $scope.desc = function(fla, bol) {
+        if (fla == 'price') {
+            if (bol == false) {
+                $scope.items = $scope.items.sort(function(x, y) {
+                    return y.price - x.price;
+                });
+            } else {
+                $scope.items = $scope.items.sort(function(x, y) {
+                    return x.price - y.price;
+                });
+            }
+        }
+    };
+
+
+
+
+
+
 
 });
