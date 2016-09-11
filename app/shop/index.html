@@ -14,11 +14,14 @@
             <td>
                 <a href="{{item.linkUrl}}" target="_blank" title="此链接将跳转到淘宝相关页面...">{{item.title}}</a>
             </td>
-            <td class="bold">{{item.price|number:2}}</td>
+            <td class="bold">{{ item.price | number:2 }}</td>
             <td>
-                <button type="button" class="btn btn-default btn-xs" ng-click="reduce(item.id)" ng-disabled="item.quantity<=1">－</button>
+                <button type="button" class="btn btn-default btn-xs" ng-click="reduce(item.id)" ng-disabled="item.quantity <= 1">－</button>
+
                 <input type="text" size="5" ng-model="item.quantity" ng-keydown="quantityKeydown()" ng-keyup="quantityKeyup()">
+
                 <button type="button" class="btn btn-default btn-xs" ng-click="add(item.id)">＋</button>
+
             </td>
             <td class="bold mark">{{item.price*item.quantity|number:2}}</td>
             <td>

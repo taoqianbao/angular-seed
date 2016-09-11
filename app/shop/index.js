@@ -54,13 +54,10 @@ angular.module('myApp.cart', ['ngRoute'])
 
     //输入框添加keydown事件，避免输入非正整数
     $scope.quantityKeydown = function(event) {
-
-        event = event || window.event;
-
+        event = event || window.event;      //兼容IE8以下，target也是
         var target = event.target || event.srcElement;
         var keycode = event.keyCode;
         if ((37 <= keycode && keycode <= 40) || (48 <= keycode && keycode <= 57) || (96 <= keycode && keycode <= 105) || keycode == 8) {
-
             //方向键↑→ ↓←、数字键、backspace
         } else {
             console.log(keycode);
@@ -72,10 +69,10 @@ angular.module('myApp.cart', ['ngRoute'])
 
     //keyup事件，当输入数字为0时，重新刷新文本框内容
     $scope.quantityKeyup = function(event) {
-        event = event || window.event;
+        event = event || window.event;  //兼容IE8以下，target也是
         var target = event.target || event.srcElement;
         var keycode = event.keyCode;
-        if (key === keycode || 96 === keycode) {
+        if (48 === keycode || 96 === keycode) {
             target.value = parseInt(target.value);
         }
     };
