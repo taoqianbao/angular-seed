@@ -28,6 +28,9 @@ angular.module('myApp.index', [])
     }, {
         id: "view3",
         name: "view3"
+    }, {
+        id: "shop",
+        name: "shop"
     }];
 
     $scope.handle_nav = function(item) {

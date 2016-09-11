@@ -20,18 +20,21 @@ angular.module('myApp', [
         'myApp.view2',
         'myApp.view3',
         'myApp.service',
-        'myApp.version'
+        'myApp.version',
+        'myApp.cart'
     ])
-    .config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
+    .config(['$locationProvider', '$routeProvider',
+        function($locationProvider, $routeProvider) {
 
-        $locationProvider.hashPrefix('!');
+            $locationProvider.hashPrefix('!');
 
-        $routeProvider.otherwise({
-            redirectTo: '/view1'
-        });
+            $routeProvider.otherwise({
+                redirectTo: '/view1'
+            });
 
-        // $locationProvider.html5Mode({
-        //     enable: true,
-        //     requireBase: false
-        // });
-    }]);
+            // $locationProvider.html5Mode({
+            //     enable: true,
+            //     requireBase: false
+            // });
+        }
+    ]);
