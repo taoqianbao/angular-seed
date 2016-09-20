@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <meta charset="utf-8">
+        <title>study angularjs - 创建一个单向链接</title>
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/foundation/4.3.2/css/foundation.min.css">
+        <style media="screen">
+            div {
+                min-height: 10px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h3 ng-non-bindable>
+            创建一个单向链接 ng-bind, {{}}, ng-bind-template
+        </h3>
+        <div id="todoPanel" class="panel" ng-controller="defaultCtrl">
+            <h3 class="panel-header">To Do List</h3>
+
+            <div>There are
+                {{todos.length}}
+                items.
+            </div>
+
+            <p></p>
+
+            <div>
+                There are
+                <span ng-bind="todos.length"></span>
+                items.
+            </div>
+
+            <p></p>
+
+            <div ng-bind-template="First: {{todos[0].action}}. Second: {{todos[1].action}}"></div>
+
+            <p></p>
+
+            <div ng-non-bindable>
+                AngularJS uses
+                {{and}}
+                characters for templates.
+            </div>
+        </div>
+
+        <script src="//cdn.bootcss.com/angular.js/1.5.8/angular.js"></script>
+        <script src="//cdn.bootcss.com/angular.js/1.5.8/i18n/angular-locale_zh-cn.js"></script>
+        <!-- <script src="//cdn.bootcss.com/angular.js/1.5.8/angular-sanitize.js"></script> -->
+        <script src="//cdn.bootcss.com/angular.js/1.5.8/angular-animate.js"></script>
+        <script src="//cdn.bootcss.com/angular.js/1.5.8/angular-route.js"></script>
+
+        <script type="text/javascript">
+            angular.module("myApp", []).controller("defaultCtrl", function($scope) {
+                $scope.todos = [
+                    {
+                        action: "Get groceries",
+                        complete: false
+                    }, {
+                        action: "Call plumber",
+                        complete: false
+                    }, {
+                        action: "Buy flowers",
+                        complete: false
+                    }, {
+                        action: "Call family",
+                        complete: true
+                    }, {
+                        action: "Get groceries",
+                        complete: false
+                    }, {
+                        action: "Get groceries",
+                        complete: false
+                    }
+                ];
+            })
+        </script>
+
+    </body>
+</html>

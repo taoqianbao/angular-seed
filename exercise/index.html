@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <title>study angularjs</title>
+    <style media="screen">
+        div{
+          min-height: 10px;
+        }
+    </style>
+  </head>
+  <body ng-controller="IndexCtrl">
+
+    <h1>ngSanitize</h1>
+
+    <div>
+
+      <div ng-bind="safeContent">
+      </div>
+
+      <!-- <div ng-bind-html="myUnsafeHTMLContent">
+      </div> -->
+
+      <div ng-bind-html-unsafe="myUnsafeHTMLContent">
+      </div>
+
+    </div>
+
+    <script src="//cdn.bootcss.com/angular.js/1.5.8/angular.js"></script>
+    <script src="//cdn.bootcss.com/angular.js/1.5.8/i18n/angular-locale_zh-cn.js"></script>
+    <!-- <script src="//cdn.bootcss.com/angular.js/1.5.8/angular-sanitize.js"></script> -->
+    <script src="//cdn.bootcss.com/angular.js/1.5.8/angular-animate.js"></script>
+    <script src="//cdn.bootcss.com/angular.js/1.5.8/angular-route.js"></script>
+    <script src="index.js" charset="utf-8"></script>
+
+  </body>
+</html>

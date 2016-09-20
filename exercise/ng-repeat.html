@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <meta charset="utf-8">
+        <title>study angularjs</title>
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/foundation/4.3.2/css/foundation.min.css">
+        <style media="screen">
+            body {
+                padding: 10px;
+            }
+            div {
+                min-height: 10px;
+            }
+            [ng-cloak] {
+                visibility: hidden;
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <section>
+            <h2>ng-include</h2>
+            <div class="">
+                <pre>
+    名称 描述
+    src 指定要加载的内容的URL
+    onload 指定一个在内容被加载时调用计算的表达式
+    autoscroll 指定在内容被加载时，angualrJS是否应该滚动到这部分视图所在的区域
+                </pre>
+            </div>
+        </section>
+
+        <div ng-controller="defaultCtrl">
+            <ng-include src="viewFile()" onload="" autoscroll=""></ng-include>
+        </div>
+
+        <footer>
+            footer
+        </footer>
+
+        <script src="//cdn.bootcss.com/angular.js/1.5.8/angular.js"></script>
+        <script src="//cdn.bootcss.com/angular.js/1.5.8/i18n/angular-locale_zh-cn.js"></script>
+        <!-- <script src="//cdn.bootcss.com/angular.js/1.5.8/angular-sanitize.js"></script> -->
+        <!-- <script src="//cdn.bootcss.com/angular.js/1.5.8/angular-animate.js"></script> -->
+        <!-- <script src="//cdn.bootcss.com/angular.js/1.5.8/angular-route.js"></script> -->
+
+        <script type="text/javascript">
+            angular.module('myApp', []).controller('defaultCtrl', function($scope, $timeout) {
+
+                $scope.todos = [
+                    {
+                        action: "Get groceries",
+                        complete: false,
+                        childs: [
+                          {
+                            key1: "name1"
+                          },
+                          {
+                            key1: "name2"
+                          }
+                        ],
+                        childMap : {
+                          key1: 'value1',
+                          key2: 'value2',
+                          key3: 'value3'
+                        }
+                    }, {
+                        action: "Call plumber",
+                        complete: false
+                    }, {
+                        action: "Buy flowers",
+                        complete: false
+                    }, {
+                        action: "Call family",
+                        complete: true
+                    }
+                ];
+
+                $scope.viewFile = function() {
+                    return "templates/table-complex.html";
+                };
+            });
+
+            window.onload = function() {};
+        </script>
+
+    </body>
+</html>

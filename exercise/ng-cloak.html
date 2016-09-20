@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <meta charset="utf-8">
+        <title>study angularjs</title>
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/foundation/4.3.2/css/foundation.min.css">
+        <style media="screen">
+            body {
+                padding: 10px;
+            }
+            div {
+                min-height: 10px;
+            }
+            [ng-cloak] {
+                visibility: hidden;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div ng-controller="EquationController">
+            <p>
+              waiting for your scope change ....
+            </p>
+            <code ng-cloak>{{ equation.output }}</code>
+        </div>
+
+        <script src="//cdn.bootcss.com/angular.js/1.5.8/angular.js"></script>
+        <script src="//cdn.bootcss.com/angular.js/1.5.8/i18n/angular-locale_zh-cn.js"></script>
+        <!-- <script src="//cdn.bootcss.com/angular.js/1.5.8/angular-sanitize.js"></script> -->
+        <!-- <script src="//cdn.bootcss.com/angular.js/1.5.8/angular-animate.js"></script> -->
+        <!-- <script src="//cdn.bootcss.com/angular.js/1.5.8/angular-route.js"></script> -->
+
+        <script type="text/javascript">
+            angular.module('myApp', []).controller('EquationController', function($scope, $timeout) {
+                $timeout(function() {
+
+                    $scope.equation = {
+                        output: "hello your name"
+                    };
+
+                }, 2000);
+            });
+
+            window.onload = function() {};
+        </script>
+
+    </body>
+</html>

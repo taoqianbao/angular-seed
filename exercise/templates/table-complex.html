@@ -1,0 +1,32 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Action</th>
+            <th>Done</th>
+            <th></th>
+        </tr>
+        <tbody>
+            <tr ng-repeat="item in todos" ng-class="$odd ? 'odd' : 'even' ">
+                <td>{{$index + 1}}</td>
+                <td>{{item.action}}</td>
+                <td>{{item.complete}}</td>
+
+                <td style="padding-left:30px;">
+                    <span style="color:red;">index1 = {{ $index }}</span>
+                    <ul>
+                        <li ng-repeat="subitem in item.childs">
+                          <span style="color:blue">{{ $index }}  </span>
+                          {{ subitem.key1 }}
+                        </li>
+                    </ul>
+                    <ol>
+                      <li ng-repeat="(key,value) in item.childMap">
+                        <span style="color:green">{{ $parent.$index }}  </span>
+                        {{ key }} = {{ value }}
+                      </li>
+                    </ol>
+                </td>
+            </tr>
+        </tbody>
+    </thead>
+</table>

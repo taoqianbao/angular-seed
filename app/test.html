@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>test page</title>
+        <style media="screen">
+
+            .menu:before {
+                content: '[';
+            }
+            .menu:after {
+                content: ']';
+            }
+            a:hover::after {
+                content: "(" attr(href) ")";
+            }
+
+            .clear-fix {
+                *overflow: hidden;
+                *zoom: 1;
+            }
+            .clear-fix::after {
+                display: table;
+                content: "";
+                width: 0;
+                clear: both;
+            }
+
+            ul > li {
+                float: left;
+            }
+
+            .container {
+                width: 300px;
+                height: 300px;
+                background-color: #dedede;
+                position: relative;
+            }
+            .container .wrap {
+                width: 200px;
+                height: 200px;
+                top: 10px;
+                left: 10px;
+                background-color: #aaaaaa;
+                position: absolute;
+            }
+            .container .content {
+                width: 250px;
+                height: 250px;
+                position: absolute;
+            }
+            .container .sidebar {
+                top: 10px;
+                left: 10px;
+                width: 100px;
+                height: 100px;
+                background-color: #cccccc;
+                position: relative;
+            }
+            .container .noeffects {
+                width: 60px;
+                height: 60px;
+                background-color: red;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="container">
+
+            <div class="wrap">
+
+                <div class="content"></div>
+
+                <div class="sidebar"></div>
+
+                <div class="noeffects"></div>
+
+            </div>
+
+        </div>
+
+        <div class="container">
+            <div class="menu">
+                hello
+            </div>
+        </div>
+
+        <div class="">
+            <a href="http://www.baidu.com">baidu</a>
+        </div>
+
+        <div>
+            <ul class="clear-fix">
+                <li>111111</li>
+                <li>222222</li>
+                <li>333333</li>
+            </ul>
+            <div class="" style="float:left">
+                aaaa
+            </div>
+        </div>
+    </body>
+</html>

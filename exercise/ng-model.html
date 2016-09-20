@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <meta charset="utf-8">
+        <title>study angularjs - 创建双向数据绑定	</title>
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/foundation/4.3.2/css/foundation.min.css">
+        <style media="screen">
+            div {
+                min-height: 10px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h3 ng-non-bindable>
+            创建双向数据绑定	 ng-model
+        </h3>
+        <div class="">
+          双向绑定仅能应用于允许用户输入数据值的元素上，即:input、textarea和select元素.ng-model指令对所应用到的元素的内容进行设置，通过更新数据模型的方法响应用户所做的修改。
+        </div>
+
+        <div class="" ng-controller="defaultCtrl">
+          <h3 class="panel-header">To Do List</h3>
+        <div class="well">
+            <div>The first item is : {{todos[0].action}}</div>
+        </div>
+        <div class="form-group well">
+            <label>Set First Item：</label>
+            <input type="text" class="form-control" ng-model="todos[0].action" />
+        </div>
+        </div>
+
+        <script src="//cdn.bootcss.com/angular.js/1.5.8/angular.js"></script>
+        <script src="//cdn.bootcss.com/angular.js/1.5.8/i18n/angular-locale_zh-cn.js"></script>
+        <!-- <script src="//cdn.bootcss.com/angular.js/1.5.8/angular-sanitize.js"></script> -->
+        <script src="//cdn.bootcss.com/angular.js/1.5.8/angular-animate.js"></script>
+        <script src="//cdn.bootcss.com/angular.js/1.5.8/angular-route.js"></script>
+
+        <script type="text/javascript">
+            angular.module("myApp", []).controller("defaultCtrl", function($scope) {
+              $scope.todos = [{
+                action: 'modify'
+              }];
+            })
+        </script>
+
+    </body>
+</html>
